@@ -1,0 +1,40 @@
+[To Do List part 1]
+input 밖에 form을 만들고 form에 submit이라는 이벤트를 이용할 거임
+toDo가 비어있으면 함수가 작동하지않도록 return을 하고, 마지막에 setToDo("")을 통해
+Add to do버튼을 누르면 toDo를 빈칸으로 만들도록 한다.
+
+그 다음은 여러 toDo를 저장 할 array를 만들 것이다.
+새로운 state를 만들고 toDos를 array로해서 직접적으로 state를 수정하는 방식이 아닌,
+'함수'를 통해 state를 수정하는 방식을 택한다. 
+
+즉 array에 직접적으로 수정하지 않고 element를 추가하는 방법이 필요하다.
+
+1번 방법 toDo의 값을 공백으로 직접 바꾼(함수를 통해) 방법
+2번 방법 setToDos안에 함수를 넣는 것 이 함수는 첫번째 argument로 현재의 state를 받아옴
+ㄴ> 현재의 state가 들어간 새로운 array를 리턴해주는 역할을 한다. 즉 이 array에는 todo와 이전의 toDos를 가지게 됨
+array안에 다른 array의 요소들을 넣고 싶음
+number = [1,2,3]을 newNumber[4]에 넣고싶음 [4, ...number]을 사용
+즉 setToDos를 통해 현재의 배열ToDos(지금까지 넣은 엘리먼트 포함된 array)를 가져와 toDo를 추가하는 역할을 한다.
+
+[To Do List part 2]
+수정하는 함수 사용할 때의 두 가지 옵션
+1) setToDo("") 처럼, 우리가 저장한 값을 가지고 있음.
+2) 함수를 보내는 방법
+함수를 보낼 때, react.js는 함수의 첫 번째 argument로 현재 state를 보내게 된다.
+그러면 우리는 이 state를 계산하거나, 새로운 state를 만드는 데 사용할 수 있다.
+이번 예시에서는 스프레드연산자 사용!
+
+array 각각의 element를 수정하고 싶을 때?
+map을 이용하면, array의 각각 요소에 함수가 적용된다.
+그리고 그 함수로부터 return된 값으로 새로운 배열이 만들어진다.
+
+ex) ["혜연","민재","혜진"].map(()=>);
+이렇게 되면 함수가 총 3번 실행됨.
+
+map의 함수의 첫번째 argument가 진행되고 있는 순서에 맞는 item이다.
+
+결론적으로, map은 array를 가져와서 함수를 입히고, return하는 값으로 새로운 array를 만들어준다.
+
+Warning: Each child in a list should have a unique "key" prop.
+
+map의 두 번째 argument는 index다.
